@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COLOR GENERATOR</title>
+<style>
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #fff;
+    }
+    .div1{
+        background:rgb(106, 212, 241);
+        padding: 30px;
+        text-align: center;
+        background-image: url(OIP.webp);
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 20px;
+        box-shadow: 12px 12px 18px rgb(255, 255, 255);
+    }
+    button{
+        padding: 10px 20px;
+        font-size: 10px;
+        cursor: pointer;
+        border-radius: 30px;
+        font-size: larger;
+        color: rgb(249, 251, 253);
+        background-color: rgb(229, 126, 16);
+        box-shadow: 6px 8px 12px rgb(218, 218, 230);
+    }
+    #colorCode{
+        font-size: 20px;
+        margin: 15px;
+    }
+    h2{
+        color: #fff;
+    }
+    P{
+        color: #fff;
+    }
+</style>
+</head>
+<body>
+    <div class="div1">
+        <h2> RANDOM COLOR GENERATOR</h2>
+        <P id="colorCode">#fff</P>
+        <button onclick="changeColor()">CHANGE COLOR
+
+        </button>
+    </div>
+
+</body>
+<script>
+    function changeColor(){
+        // alert("BUTTON CHECKED")
+        let letters = "0123456789ABCDEF";
+         let colors = "#";
+
+        for (let i = 0; i < 8; i ++){
+             colors = colors +
+         letters[Math.floor(Math.random() * 16)];
+         }
+         document.body.style.backgroundColor = colors;
+         document.getElementById("colorCode").innerText=colors;
+    }
+</script> 
+</html>
