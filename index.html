@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+
+
+
+
+
+
+</style>
+<body onload="time()">
+    <h1></h1>
+    
+</body>
+<script>
+// let x=new Date();
+// let b=x.getHours();
+// document.write(b);
+function time(){
+    let date= new Date();
+    let hour= date.getHours();
+    let mintue= date.getMinutes();
+    let second= date.getSeconds();
+    // let Date = date.getDate();
+    let s = "AM"
+      
+
+ if(hour >=12){
+        s = "PM";
+
+
+    } 
+    
+    if(hour > 12){
+        hour = hour-12;
+    }
+   
+     hour=hour <10 ? "0" + hour : hour;
+     mintue=mintue <10 ? "0" + mintue:mintue;
+     second = second <10 ? "0"+ second:second;
+      
+     let currentime = hour +":" +mintue +":" +second +":"+s;
+     document.getElementsByTagName("h1")[0].innerText=currentime;
+     setTimeout(time,1000);
+     
+
+
+}
+
+
+</script>
+</html>
